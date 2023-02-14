@@ -50,7 +50,7 @@
         <section class="section hero-up-side">
             <div class="container">
                 <h1 class="hero-main-header">Effective Solutions for Your Business</h1>
-                <button class="hero-btn" type="button">Order a service</button>
+                <button class="hero-btn" type="button" data-modal-open>Order a service</button>
             </div>
                 
         </section>
@@ -109,13 +109,22 @@
             <ul class="aboutus-list">
                 <li class="aboutus-list-item">
                     <img class="aboutus-list-img" src="img/what-we-do1.jpg" alt="Tablet" width="370">
+                    <div class="aboutus-overlay-textbox">
+                      <p class="aboutus-overlay-text">Desktop Apps</p>
+                    </div>
                 </li>
                 <li class="aboutus-list-item">
                     <img class="aboutus-list-img" src="img/what-we-do2.jpg"
                     alt="Laptop turned on" width="370">
+                    <div class="aboutus-overlay-textbox">
+                      <p class="aboutus-overlay-text">Mobile Apps</p>
+                    </div>
                 </li>
                 <li class="aboutus-list-item">
                     <img class="aboutus-list-img" src="img/what-we-do3.jpg" alt="Small tablet and keyboard" width="370">
+                    <div class="aboutus-overlay-textbox">
+                      <p class="aboutus-overlay-text">Design Solutions</p>
+                    </div>
                 </li> 
             </ul>
         </div>
@@ -318,7 +327,17 @@
               </ul>
             </div>
           </section>
-          
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+            <button type="button" class="modal-btn-close" data-modal-close>
+                <svg class="close-btn" width="11" height="11">
+                    <use href="./img/icons.svg#icon-close"></use>
+                </svg>
+            </button>
+            </div>
+          </div>
+
+
     </main>
 
     <!--Footer-->
@@ -378,6 +397,7 @@
         <!--End-->
     </footer>
 
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>

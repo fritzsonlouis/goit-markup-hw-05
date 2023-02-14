@@ -11,6 +11,7 @@
     --lightgrey-bg-color: #f5f4fa;
     --light-bg2-color: #eeeeee;
     --icon-color-main: #afb1b8;
+    --timing: 250ms;
 }
 
 *,
@@ -113,6 +114,19 @@ body {
 
 .nav-list-link-card {
     color: var(--primary-color);
+    position: relative;
+}
+
+.nav-list-link-card::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 8px;
+  border-radius: 3px;
+    background-color: var(--primary-color);
 }
 
 .nav-list-link,
@@ -127,6 +141,11 @@ body {
     padding: 32px 0;
 }
 
+.address-info {
+    transition-property: color;
+    transition-duration: var(--timing);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .contact .container {
     display: flex;
@@ -394,6 +413,32 @@ body {
     margin-bottom: 20px; /* add some margin between title and list */
 }
 
+.aboutus-list-item {
+    position: relative;
+}
+
+.aboutus-overlay-textbox {
+    background-color: rgba(47, 48, 58, 0.8);
+    width: 370px;
+    height: 70px;
+    position: absolute;
+    bottom: 0px;
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
+
+.aboutus-overlay-text {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--third-colorFont);
+}
+
 
 .aboutus-title,
 .ourteam-title {
@@ -594,6 +639,52 @@ body {
     border-right: 1px solid var(--light-bg2-color);
     border-bottom: 1px solid var(--light-bg2-color);
     border-left: 1px solid var(--light-bg2-color);
+    position: relative;
+    transition-property: box-shadow;
+    transition-duration: var(--timing);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay {
+    position: relative;
+    width: 370px;
+    height: 294px;
+    overflow: hidden;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 370px;
+    height: 294px;
+    transform: translateY(295px);
+    background-color: var(--primary-color);
+    opacity: 90%;
+    color: var(--mainbright);
+    font-family: roboto;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-justify: center;
+    padding-top: 63px;
+    padding-bottom: 91px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.portfolio-list-item:hover .overlay-text {
+    transform: translateY(0px);
+    transition: transform 350ms ease;
+}
+
+.overlay-card {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--bordercolor);
+    border-left: 1px solid var(--bordercolor);
+    border-right: 1px solid var(--bordercolor);
 }
   
 .portfolio-list-item:nth-last-child(-n + 3) {
@@ -621,4 +712,85 @@ body {
     color: var(--secondary-colorFont);
     margin-bottom: 20px;
 }
+
+@keyframes modal-animation {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+      scale: (0);
+    }
+  
+    100% {
+      opacity: 1;
+      visibility: visible;
+      scale: (1);
+    }
+  }
+
+
+.backdrop {
+    visibility: visible;
+    animation-name: modal-animation;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+
+.modal {
+    position: absolute;
+    background-color: var(--primary-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    width: 528px;
+    height: 581px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: modal-animation;
+    animation-duration: var(--timing);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn-close {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: var(--primary-colorFont);
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.modal-btn-close:hover,
+.modal-btn-close:focus {
+    cursor: pointer;
+}
+
+.close-btn {
+    fill: var(--primary-colorFont);
+    left: 22.22%;
+    right: 16.67%;
+    top: 16.67%;
+    bottom: 22.22%;
+}
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hero-btn:click {
+    animation-name: modal-animation;
+    animation-duration: var(--time);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /*end of Main*/
