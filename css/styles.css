@@ -236,6 +236,12 @@ body {
     margin-right: 10px;
 }
 
+.socialmedia-list-link {
+    transition: background-color var(--timing) cubic-bezier(0.4, 0, 0.2, 1),
+    color var(--timing) cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .socialmedia-list-link .icon {
     fill: var(--third-colorFont);
 }
@@ -340,13 +346,18 @@ body {
     color: var(--third-colorFont);
     cursor: pointer;
     padding: 10px 20px;
-   display: inline-block;
+    display: inline-block;
+
+    transition: background-color var(--timing) cubic-bezier(0.4, 0, 0.2, 1),
+    color var(--timing) cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--timing) cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
-    color: var(--primary-colorFont);
+    color: var(--primary-color);
+    background-color: var(--light-bg-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -420,7 +431,6 @@ body {
 .aboutus-overlay-textbox {
     background-color: rgba(47, 48, 58, 0.8);
     width: 370px;
-    height: 70px;
     position: absolute;
     bottom: 0px;
     padding-top: 27px;
@@ -523,6 +533,12 @@ body {
     fill: var(--third-colorFont);
 }
 
+.icon-thumb {
+    transition: background-color var(--timing) cubic-bezier(0.4, 0, 0.2, 1),
+    color var(--timing) cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .social-list-items:not(:last-child) {
     margin-right: 10px;
 }
@@ -609,6 +625,12 @@ body {
     margin-right: 8px;
 }
 
+.btn {
+    transition: background-color var(--timing) cubic-bezier(0.4, 0, 0.2, 1),
+    color var(--timing) cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--timing) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .btn:hover,
 .btn:focus {
     background-color: var(--primary-color);
@@ -648,7 +670,6 @@ body {
 .overlay {
     position: relative;
     width: 370px;
-    height: 294px;
     overflow: hidden;
 }
 
@@ -657,12 +678,12 @@ body {
     top: 0;
     left: 0;
     width: 370px;
-    height: 294px;
+
     transform: translateY(295px);
     background-color: var(--primary-color);
     opacity: 90%;
-    color: var(--mainbright);
-    font-family: roboto;
+    color: var(--third-colorFont);
+    font-family: Roboto;
     font-weight: 400;
     font-size: 18px;
     line-height: 1.56;
@@ -681,7 +702,7 @@ body {
 }
 
 .overlay-card {
-    padding: 20px 24px;
+    /* padding: 20px 24px; */
     border-bottom: 1px solid var(--bordercolor);
     border-left: 1px solid var(--bordercolor);
     border-right: 1px solid var(--bordercolor);
@@ -742,7 +763,7 @@ body {
 
 .modal {
     position: absolute;
-    background-color: var(--primary-color);
+    background-color: var(--light-bg-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -762,7 +783,7 @@ body {
     width: 30px;
     height: 30px;
     color: var(--primary-colorFont);
-    background-color: var(--primary-color);
+    background-color: var(--light-bg-color);
     position: absolute;
     top: 8px;
     right: 8px;
@@ -789,7 +810,7 @@ body {
 
 .hero-btn:click {
     animation-name: modal-animation;
-    animation-duration: var(--time);
+    animation-duration: var(--timing);
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
